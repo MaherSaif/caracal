@@ -27,6 +27,7 @@ module Caracal
         attr_reader :paragraph_italic
         attr_reader :paragraph_underline
         attr_reader :paragraph_bgcolor
+        attr_reader :paragraph_rtl
 
         # initialization
         def initialize(options={}, &block)
@@ -55,7 +56,8 @@ module Caracal
             bold:       paragraph_bold,
             italic:     paragraph_italic,
             underline:  paragraph_underline,
-            bgcolor:    paragraph_bgcolor
+            bgcolor:    paragraph_bgcolor,
+            rtl:        paragraph_rtl
           }
         end
 
@@ -63,7 +65,7 @@ module Caracal
         #========== SETTERS ===============================
 
         # booleans
-        [:bold, :italic, :underline].each do |m|
+        [:bold, :italic, :underline, :rtl].each do |m|
           define_method "#{ m }" do |value|
             instance_variable_set("@paragraph_#{ m }", !!value)
           end
@@ -176,7 +178,7 @@ module Caracal
         private
 
         def option_keys
-          [:content, :style, :align, :color, :size, :bold, :italic, :underline, :bgcolor]
+          [:content, :style, :align, :color, :size, :bold, :italic, :underline, :bgcolor, :rtl]
         end
 
       end
