@@ -89,7 +89,7 @@ module Caracal
                   xml['w'].rFonts( { 'w:ascii' => f, 'w:hAnsi' => f, 'w:eastAsia' => f, 'w:cs' => f })
                 end
               end
-              xml['w'].rtl({ 'w:val' => '0' })
+              xml['w'].rtl({ 'w:val' => (attrs[:rtl] ? '1' : '0') })                          unless attrs[:rtl].nil?
             end
           end
         end
