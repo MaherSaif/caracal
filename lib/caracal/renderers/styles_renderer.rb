@@ -34,6 +34,7 @@ module Caracal
                   xml['w'].smallCaps({ 'w:val' => '0' })
                   xml['w'].strike({ 'w:val' => '0' })
                   xml['w'].color({ 'w:val' => s.style_color })
+                  xml['w'].szCs({ 'w:val' => s.style_size })
                   xml['w'].sz({ 'w:val' => s.style_size })
                   xml['w'].u({ 'w:val' => (s.style_underline ? 'single' : 'none') })
                   xml['w'].vertAlign({ 'w:val' => 'baseline' })
@@ -84,6 +85,7 @@ module Caracal
                   xml['w'].i({ 'w:val' => (s.style_italic ? '1' : '0') }) unless s.style_italic.nil?
                   xml['w'].caps({ 'w:val' => (s.style_caps ? '1' : '0') }) unless s.style_caps.nil?
                   xml['w'].color({ 'w:val' => s.style_color }) unless s.style_color.nil?
+                  xml['w'].szCs({ 'w:val' => s.style_size }) unless s.style_size.nil?
                   xml['w'].sz({ 'w:val' => s.style_size }) unless s.style_size.nil?
                   xml['w'].u({ 'w:val' => (s.style_underline ? 'single' : 'none') }) unless s.style_underline.nil?
                 end

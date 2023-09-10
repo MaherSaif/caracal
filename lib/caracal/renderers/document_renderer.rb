@@ -78,11 +78,8 @@ module Caracal
                 xml['w'].rStyle(    { 'w:val'  => attrs[:style] })                            unless attrs[:style].nil?
                 xml['w'].color(     { 'w:val'  => attrs[:color] })                            unless attrs[:color].nil?
 
-                if attrs[:rtl] == true
-                  xml['w'].szCs(      { 'w:val'  => attrs[:size]  })                            unless attrs[:size].nil?
-                else
-                  xml['w'].sz(        { 'w:val'  => attrs[:size]  })                            unless attrs[:size].nil?
-                end
+                xml['w'].szCs(      { 'w:val'  => attrs[:size]  })                            unless attrs[:size].nil?
+                xml['w'].sz(        { 'w:val'  => attrs[:size]  })                            unless attrs[:size].nil?
 
                 xml['w'].b(         { 'w:val'  => (attrs[:bold] ? '1' : '0') })               unless attrs[:bold].nil?
                 xml['w'].i(         { 'w:val'  => (attrs[:italic] ? '1' : '0') })             unless attrs[:italic].nil?
